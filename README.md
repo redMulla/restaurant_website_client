@@ -53,7 +53,7 @@ This is a complete restaurant website solution I built to demonstrate my full-st
 
 ## 📸 Screenshots
 
-[Add your screenshots here]
+[Screenshots here]
 
 ## 💼 Why I Built This
 
