@@ -105,7 +105,7 @@ export default function Home() {
               className="border-gray-200 text-gray-700 hover:bg-white/20"
             >
               <a
-                href="https://wa.me/971501234567"
+                href="https://wa.me/971504930652"
                 target="_blank"
                 rel="noopener noreferrer"
               >
