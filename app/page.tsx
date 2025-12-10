@@ -1,46 +1,12 @@
 import Hero from "@/components/Hero";
 import MenuCard from "@/components/MenuCard";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { getFeaturedItems } from "@/lib/menuData";
+import { MessageCircle } from "lucide-react";
 
-// Hardcoded featured items for Day 1
-const featuredItems = [
-  {
-    id: "1",
-    name: "Margherita Pizza",
-    description: "Fresh mozzarella, tomato sauce, and basil on a crispy crust",
-    price: 45,
-    image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800",
-    category: "Main Course",
-  },
-  {
-    id: "2",
-    name: "Grilled Salmon",
-    description: "Fresh Atlantic salmon with herbs and lemon butter sauce",
-    price: 65,
-    image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800",
-    category: "Main Course",
-  },
-  {
-    id: "3",
-    name: "Caesar Salad",
-    description:
-      "Crisp romaine lettuce, parmesan, croutons with Caesar dressing",
-    price: 35,
-    image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800",
-    category: "Appetizers",
-  },
-  {
-    id: "4",
-    name: "Chocolate Lava Cake",
-    description:
-      "Warm chocolate cake with a molten center and vanilla ice cream",
-    price: 30,
-    image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=800",
-    category: "Desserts",
-  },
-];
+// Get featured items from centralized data
+const featuredItems = getFeaturedItems();
 
 export default function Home() {
   return (
@@ -100,7 +66,7 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-orange-600 text-orange-600 hover:bg-orange-200"
+                className="border-orange-600 text-orange-600 hover:bg-orange-50"
               >
                 <Link href="/about">Learn More About Us</Link>
               </Button>
@@ -136,10 +102,10 @@ export default function Home() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-gray-700 hover:bg-white/10"
+              className="border-gray-200 text-gray-700 hover:bg-white/20"
             >
               <a
-                href="https://wa.me/971504930652"
+                href="https://wa.me/971501234567"
                 target="_blank"
                 rel="noopener noreferrer"
               >
