@@ -8,22 +8,23 @@ import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Tasty Bites - Best Restaurant in Dubai",
-    description: "Delicious authentic cuisine with the finest ingredients. Order online for quick delivery.",
+  title: "Tasty Bites - Best Restaurant in Dubai",
+  description:
+    "Delicious authentic cuisine with the finest ingredients. Order online for quick delivery.",
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode;
+  children,
+}: {
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="en">
-        <body className={inter.className}>
+  return (
+    <html lang="en">
+      <body className={inter.className}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
-        </body>
-        </html>
-    );
+      </body>
+    </html>
+  );
 }

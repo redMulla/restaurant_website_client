@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Restaurant Management System - MERN Stack
 
-## Getting Started
+> A modern, full-stack restaurant website with admin panel for menu management.
 
-First, run the development server:
+## 🎯 Project Overview
+
+This is a complete restaurant website solution I built to demonstrate my full-stack development skills. It includes a customer-facing website with online ordering and an admin panel for restaurant owners to manage their menu.
+
+## ✨ Features
+
+### Customer Features
+
+- 🎨 Modern, responsive design
+- 📱 Mobile-first approach
+- 🍕 Browse menu with category filters
+- 🔍 Search functionality
+- 💬 WhatsApp ordering integration
+- ⚡ Fast loading with Next.js optimization
+- 🎯 SEO optimized
+
+### Admin Features (Coming Soon)
+
+- 🔐 Secure authentication
+- ➕ Add/edit/delete menu items
+- 📊 Dashboard with analytics
+- 🖼️ Image upload for dishes
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- Lucide React icons
+
+**Backend:** (Days 5-7)
+
+- Node.js + Express
+- MongoDB + Mongoose
+- JWT authentication
+- RESTful API
+
+## 🚀 Key Technical Highlights
+
+- **Server-Side Rendering** for better SEO
+- **TypeScript** for type safety
+- **Responsive Design** - works on all devices
+- **Component-Based Architecture** - reusable and maintainable
+- **Image Optimization** with Next.js Image component
+- **Modern UI/UX** with shadcn/ui
+
+## 📸 Screenshots
+
+[Add your screenshots here]
+
+## 💼 Why I Built This
+
+I built this project to demonstrate my ability to create production-ready web applications that solve real business problems. Restaurant owners need:
+
+- Professional online presence
+- Easy menu management
+- Mobile ordering capabilities
+
+This project shows I can deliver all of that.
+
+## 🎓 What I Learned
+
+- Next.js 14 App Router and Server Components
+- TypeScript with React
+- Component library integration (shadcn/ui)
+- Responsive design patterns
+- SEO optimization techniques
+
+## 📦 Installation
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔜 Roadmap
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [x] Day 1: Homepage with featured items
+- [ ] Day 2-3: Full menu page with filtering
+- [ ] Day 4: About & Contact pages
+- [ ] Day 5-6: Backend API & Database
+- [ ] Day 7: Admin panel
+- [ ] Day 8: Deployment to Vercel
 
-## Learn More
+## 💰 Commercial Use
 
-To learn more about Next.js, take a look at the following resources:
+This is a portfolio project, but the code structure can be easily adapted for real restaurant clients. Estimated project value: **3,000-5,000 AED** for similar client work.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📧 Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built by [Your Name]
 
-## Deploy on Vercel
+- WhatsApp: [Your number if you want inquiries]
+- Email: [Your email]
+- LinkedIn: [Your profile]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Available for freelance work!** If you need a website for your restaurant or business, let's talk.
