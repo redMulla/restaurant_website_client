@@ -85,7 +85,7 @@ Open http://localhost:3000
 ## 🔜 Roadmap
 
 - [x] Day 1: Homepage with featured items
-- [ ] Day 2-3: Full menu page with filtering
+- [x] Day 2-3: Full menu page with filtering
 - [ ] Day 4: About & Contact pages
 - [ ] Day 5-6: Backend API & Database
 - [ ] Day 7: Admin panel
