@@ -97,11 +97,10 @@ This is a portfolio project, but the code structure can be easily adapted for re
 
 ## 📧 Contact
 
-Built by [Your Name]
+Built by Vassilly Ibinkwiye
 
-- WhatsApp: [Your number if you want inquiries]
-- Email: [Your email]
-- LinkedIn: [Your profile]
+- WhatsApp: +971504930652
+- Email: ivassillycharite@gmail.com
 
 ---
 
