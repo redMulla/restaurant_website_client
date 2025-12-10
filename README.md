@@ -53,7 +53,7 @@ This is a complete restaurant website solution I built to demonstrate my full-st
 
 ## 📸 Screenshots
 
-[Add your screenshots here]
+[Screenshots here]
 
 ## 💼 Why I Built This
 
@@ -85,7 +85,7 @@ Open http://localhost:3000
 ## 🔜 Roadmap
 
 - [x] Day 1: Homepage with featured items
-- [ ] Day 2-3: Full menu page with filtering
+- [x] Day 2-3: Full menu page with filtering
 - [ ] Day 4: About & Contact pages
 - [ ] Day 5-6: Backend API & Database
 - [ ] Day 7: Admin panel
@@ -97,11 +97,10 @@ This is a portfolio project, but the code structure can be easily adapted for re
 
 ## 📧 Contact
 
-Built by [Your Name]
+Built by Vassilly Ibinkwiye
 
-- WhatsApp: [Your number if you want inquiries]
-- Email: [Your email]
-- LinkedIn: [Your profile]
+- WhatsApp: +971504930652
+- Email: ivassillycharite@gmail.com
 
 ---
 
