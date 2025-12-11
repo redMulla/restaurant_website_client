@@ -1,18 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import MenuCard from "@/components/MenuCard";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { menuItems, categories } from "@/lib/menuData";
+import { Search, X } from "lucide-react";
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter items based on selected category
-  const filteredItems =
-    activeCategory === "All"
-      ? menuItems
-      : menuItems.filter((item) => item.category === activeCategory);
+  // Filter items based on category AND search query
+  const filteredItems = useMemo(() => {
+    let items = menuItems;
+
+    // Filter by category
+    if (activeCategory !== "All") {
+      items = items.filter((item) => item.category === activeCategory);
+    }
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      items = items.filter(
+        (item) =>
+          item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query)
+      );
+    }
+
+    return items;
+  }, [activeCategory, searchQuery]);
+
+  // Clear search
+  const clearSearch = () => {
+    setSearchQuery("");
+  };
+
+  // Reset all filters
+  const resetFilters = () => {
+    setActiveCategory("All");
+    setSearchQuery("");
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -28,8 +58,30 @@ export default function MenuPage() {
           </p>
         </div>
 
+        {/* Search Bar */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Search for dishes... (e.g. pizza, salmon, chocolate)"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-10 py-6 text-lg"
+            />
+            {searchQuery && (
+              <button
+                onClick={clearSearch}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+        </div>
+
         {/* Category Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {categories.map((category) => (
             <Button
               key={category}
@@ -47,36 +99,103 @@ export default function MenuPage() {
           ))}
         </div>
 
+        {/* Active Filters Display */}
+        {(activeCategory !== "All" || searchQuery) && (
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+            <span className="text-sm text-gray-600">Active filters:</span>
+            {activeCategory !== "All" && (
+              <div className="flex items-center gap-2 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">
+                <span>Category: {activeCategory}</span>
+                <button
+                  onClick={() => setActiveCategory("All")}
+                  className="hover:text-orange-900"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            )}
+            {searchQuery && (
+              <div className="flex items-center gap-2 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">
+                <span>Search: "{searchQuery}"</span>
+                <button onClick={clearSearch} className="hover:text-orange-900">
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            )}
+            <Button
+              onClick={resetFilters}
+              variant="ghost"
+              size="sm"
+              className="text-orange-600 hover:text-orange-700 hover:bg-orange-50"
+            >
+              Clear all
+            </Button>
+          </div>
+        )}
+
         {/* Items Count */}
         <div className="text-center mb-8">
           <p className="text-gray-600">
-            Showing{" "}
-            <span className="font-semibold text-orange-600">
-              {filteredItems.length}
-            </span>{" "}
-            items
-            {activeCategory !== "All" && (
-              <span>
-                {" "}
-                in <span className="font-semibold">{activeCategory}</span>
+            {filteredItems.length === 0 ? (
+              <span className="text-orange-600 font-semibold">
+                No items found
               </span>
+            ) : (
+              <>
+                Showing{" "}
+                <span className="font-semibold text-orange-600">
+                  {filteredItems.length}
+                </span>{" "}
+                {filteredItems.length === 1 ? "item" : "items"}
+                {(activeCategory !== "All" || searchQuery) &&
+                  " matching your filters"}
+              </>
             )}
           </p>
         </div>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
-            <MenuCard key={item.id} item={item} />
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {filteredItems.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-xl text-gray-500">
-              No items found in this category
-            </p>
+        {filteredItems.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fadeIn">
+            {filteredItems.map((item, index) => (
+              <div
+                key={item.id}
+                className="animate-fadeIn"
+                style={{
+                  animationDelay: `${index * 0.05}s`,
+                  animationFillMode: "backwards",
+                }}
+              >
+                <MenuCard item={item} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          // Empty State
+          <div className="text-center py-16 animate-fadeIn">
+            <div className="max-w-md mx-auto">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                No items found
+              </h3>
+              <p className="text-gray-600 mb-6">
+                {searchQuery ? (
+                  <>
+                    We couldn't find any dishes matching "
+                    <span className="font-semibold">{searchQuery}</span>"
+                    {activeCategory !== "All" && ` in ${activeCategory}`}.
+                  </>
+                ) : (
+                  `No items in ${activeCategory} category.`
+                )}
+              </p>
+              <Button
+                onClick={resetFilters}
+                className="bg-orange-600 hover:bg-orange-700"
+              >
+                Clear Filters
+              </Button>
+            </div>
           </div>
         )}
 
