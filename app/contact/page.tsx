@@ -111,7 +111,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Location",
-      details: "123 Food Street, Dubai Marina, Dubai, UAE",
+      details: "123 Food Street, Dubai Silicon Oasis, Dubai, UAE",
       link: "https://maps.google.com",
     },
     {
