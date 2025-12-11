@@ -214,7 +214,7 @@ export default function MenuPage() {
               className="bg-orange-600 hover:bg-orange-700"
             >
               <a
-                href="https://wa.me/971501234567?text=Hi! I need help choosing from the menu"
+                href="https://wa.me/971504930652?text=Hi! I need help choosing from the menu"
                 target="_blank"
                 rel="noopener noreferrer"
               >
