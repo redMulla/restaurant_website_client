@@ -115,7 +115,7 @@ Open http://localhost:3000
 ## Tech Stack
 
 **Frontend:**
-- Next.js 14 (App Router)
+- Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS
 - shadcn/ui components
