@@ -1,14 +1,33 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { menuAPI } from "@/lib/api";
+import type { MenuItem } from "@/lib/menuData";
 import Hero from "@/components/Hero";
 import MenuCard from "@/components/MenuCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { getFeaturedItems } from "@/lib/menuData";
 import { MessageCircle } from "lucide-react";
 
-// Get featured items from centralized data
-const featuredItems = getFeaturedItems();
-
 export default function Home() {
+  const [featuredItems, setFeaturedItems] = useState<MenuItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFeatured = async () => {
+      try {
+        const data = await menuAPI.getFeatured();
+        setFeaturedItems(data);
+      } catch (error) {
+        console.error("Failed to fetch featured items:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeatured();
+  }, []);
+
   return (
     <>
       <Hero />
@@ -26,11 +45,17 @@ export default function Home() {
           </div>
 
           {/* Menu Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredItems.map((item) => (
-              <MenuCard key={item.id} item={item} />
-            ))}
-          </div>
+          {loading ? (
+            <div className="flex justify-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredItems.map((item, index) => (
+                <MenuCard key={index} item={item} />
+              ))}
+            </div>
+          )}
 
           {/* View Full Menu Button */}
           <div className="text-center mt-12">
