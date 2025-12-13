@@ -150,22 +150,25 @@ export default function MenuManagerPage() {
       {/* Header */}
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
+          <div className=" pb-3">
+            <h1 className="text-3xl font-bold text-gray-900">Menu Manager</h1>
+            <p className="text-gray-600 mt-1">
+              Manage your restaurant menu items
+            </p>
+          </div>
+          <div className="flex justify-between items-center flex-wrap gap-3">
             <div className="flex items-center space-x-4">
-              <Button asChild variant="ghost" size="sm">
+              <Button
+                asChild
+                variant="outline"
+                className="border-black hover:bg-orange-500/10"
+                size="sm"
+              >
                 <Link href="/admin/dashboard">
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back to Dashboard
                 </Link>
               </Button>
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">
-                  Menu Manager
-                </h1>
-                <p className="text-gray-600 mt-1">
-                  Manage your restaurant menu items
-                </p>
-              </div>
             </div>
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
