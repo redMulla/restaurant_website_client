@@ -1,6 +1,7 @@
 // Menu items data - will be replaced with API data on Day 5
 
 export interface MenuItem {
+  _id?: string;
   id: string;
   name: string;
   description: string;

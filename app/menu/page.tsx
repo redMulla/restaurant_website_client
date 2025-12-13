@@ -72,8 +72,12 @@ export default function MenuPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       {/* Loading State */}
       {loading && (
-        <div className="flex justify-center items-center min-h-[400px]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600"></div>
+        <div className="flex justify-center items-center gap-3 flex-col min-h-[400px]">
+          <div className="">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-orange-600"></div>
+          </div>
+
+          <span className="text-l font-bold text-orange-800">Loading...</span>
         </div>
       )}
 

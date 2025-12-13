@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import { Menu, X, UtensilsCrossed } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -14,6 +16,11 @@ export default function Navbar() {
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
+
+  // Add admin link if user is logged in
+  if (user) {
+    navLinks.push({ href: "/admin/dashboard", label: "Dashboard" });
+  }
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
