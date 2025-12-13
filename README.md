@@ -2,8 +2,8 @@
 
 > A complete restaurant website with admin panel, built with Next.js 16, TypeScript, and MongoDB
 
-🔗 **Live Demo:** [your-vercel-url.vercel.app](your-url)  
-🔗 **Admin Panel:** [your-url]/admin/login  
+🔗 **Live Demo:** [https://restaurant-website-client-two.vercel.app/](https://restaurant-website-client-two.vercel.app/)  
+🔗 **Admin Panel:** https://restaurant-website-client-two.vercel.app/admin/login  
 👤 **Demo Login:** admin@tastybites.com / admin123
 
 ![Homepage Screenshot](screenshots/home.png)
@@ -69,8 +69,6 @@ This type of project typically costs **3,000-5,000 AED** for client work in Duba
 
 ## 🚀 Quick Start
 
-\`\`\`bash
-
 # Frontend
 
 npm install
@@ -78,7 +76,7 @@ npm run dev
 
 # Backend
 
-cd restaurant-backend
+repo: [restaurant_website_server](https://github.com/redMulla/restaurant_website_server)
 npm install
 npm run dev
 \`\`\`
